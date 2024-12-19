@@ -4,6 +4,7 @@ import { useState } from "react";
 import LoginForm from "../components/LoginForm";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const newsItems = [
   {
@@ -24,6 +25,12 @@ const newsItems = [
     title: "Success Story",
     description: "Read how carpooling has positively impacted our users.",
   },
+  {
+    image: "https://storage.googleapis.com/a1aa/image/vM9Stwt7g2psCNcHm8mcffbV2teoKr9Bj775hiRcbdf95lxPB.jpg",
+    alt: "FAQList",
+    title: "FAQList",
+    description: "You can find all you need here or you can contact our support team through the platform.",
+  },
 ];
 
 const Homepage = () => {
@@ -32,40 +39,47 @@ const Homepage = () => {
   const handleLogin = (email: string) => {
     setUsername(email);
   };
+  
 
   return (
     <div className="flex flex-col min-h-screen font-roboto bg-gray-100">
-      {/* Ensure Header Component is only called once */}
+      {/* Header Component */}
       <Header username={username} />
-
+  
       <main className="flex-1 container mx-auto px-4 py-12">
-        {!username ? (
-          <LoginForm onLogin={handleLogin} />
-        ) : (
-          <div>
-            {/* Main sections */}
-
-            {/* Welcome Section */}
-            <section className="text-center mb-12">
-              <h1 className="text-4xl font-bold text-gray-800 mb-4">Welcome to Carpool</h1>
-              <p className="text-gray-600 mb-8">
-                Share your ride, save the planet, and make new friends along the way.
-              </p>
-              <img
-                src="https://storage.googleapis.com/a1aa/image/WSnPGlrjHEYeQKboABgHS2jUMn4FDqI7JXWp7Br17zasD79JA.jpg"
-                alt="Carpool group"
-                className="mx-auto rounded-lg shadow-lg"
-                width="800"
-                height="400"
-              />
-            </section>
-
-            {/* Latest News Section */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Latest News</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {newsItems.map((item, index) => (
-                  <div key={index} className="bg-white p-4 rounded-lg shadow-lg overflow-hidden">
+        {/* Login Section */}
+        {!username && (
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Login</h2>
+            <LoginForm onLogin={handleLogin} />
+          </section>
+        )}
+  
+        {/* Main Sections */}
+  
+        {/* Welcome Section */}
+        <section className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">Welcome to Smart Carpool</h1>
+          <p className="text-gray-600 mb-8">
+            Share your ride, save the planet, and make new friends along the way.
+          </p>
+          <img
+            src="https://storage.googleapis.com/a1aa/image/WSnPGlrjHEYeQKboABgHS2jUMn4FDqI7JXWp7Br17zasD79JA.jpg"
+            alt="Carpool group"
+            className="mx-auto rounded-lg shadow-lg"
+            width="800"
+            height="400"
+          />
+        </section>
+  
+        {/* Latest News Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Latest News</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {newsItems.map((item, index) => (
+              <div key={index} className="bg-white p-4 rounded-lg shadow-lg overflow-hidden">
+                {item.title === "FAQList" ? (
+                  <Link to="/faq"> {/* Wrap FAQ card with Link */}
                     <img
                       src={item.image}
                       alt={item.alt}
@@ -73,17 +87,32 @@ const Homepage = () => {
                     />
                     <h3 className="text-xl font-bold text-gray-800 mt-4">{item.title}</h3>
                     <p className="text-gray-600 mt-2">{item.description}</p>
-                  </div>
-                ))}
+                  </Link>
+                ) : (
+                  <>
+                    <img
+                      src={item.image}
+                      alt={item.alt}
+                      className="w-full h-40 object-cover rounded-t-lg"
+                    />
+                    <h3 className="text-xl font-bold text-gray-800 mt-4">{item.title}</h3>
+                    <p className="text-gray-600 mt-2">{item.description}</p>
+                  </>
+                )}
               </div>
-            </section>
-
-            <p className="text-center mt-6 text-xl">You are logged in as {username}</p>
+            ))}
           </div>
+        </section>
+  
+        {/* Logged-in Info */}
+        {username && (
+          <p className="text-center mt-6 text-xl">
+            You are logged in as <span className="font-bold">{username}</span>
+          </p>
         )}
       </main>
-
-      {/* Place Footer here */}
+  
+      {/* Footer Component */}
       <Footer className="mt-auto" />
     </div>
   );

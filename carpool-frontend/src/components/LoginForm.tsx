@@ -31,7 +31,7 @@ const LoginForm = ({ onLogin }: any) => {
         onChange={(e) => setPassword(e.target.value)}
         className="w-full p-2 border rounded-lg"
       />
-      <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600">
+      <button type="submit" className="w-full bg-orange-500 text-white p-2 rounded-lg hover:bg-red-600">
         Login
       </button>
     </form>

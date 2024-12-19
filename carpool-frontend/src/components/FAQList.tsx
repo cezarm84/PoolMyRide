@@ -1,18 +1,30 @@
 import React from "react";
 
-const FAQList: React.FC = () => {
-  const faqs = [
-    { question: "How do I book a trip?", answer: "Go to the Book Trip page and fill in your details." },
-    { question: "How does carpooling work?", answer: "We match you with other users heading to the same destination." },
-    { question: "Is carpooling safe?", answer: "Yes, we verify user identities and provide safety features." },
-  ];
+interface FAQItem {
+  question: string;
+  answer: string;
+  imageUrl: string;
+  imageAlt: string;
+}
 
+interface FAQListProps {
+  faqs: FAQItem[];
+}
+
+const FAQList: React.FC<FAQListProps> = ({ faqs }) => {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md">
-      {faqs.map((faq, idx) => (
-        <div key={idx} className="mb-4">
-          <h2 className="font-bold">{faq.question}</h2>
+    <div>
+      {faqs.map((faq, index) => (
+        <div key={index} className="mb-8">
+          <h3 className="text-xl font-semibold mb-2">{faq.question}</h3>
           <p>{faq.answer}</p>
+          <img
+            src={faq.imageUrl}
+            alt={faq.imageAlt}
+            className="rounded-lg shadow-md mt-2"
+            width="600"
+            height="400"
+          />
         </div>
       ))}
     </div>
@@ -20,3 +32,4 @@ const FAQList: React.FC = () => {
 };
 
 export default FAQList;
+
