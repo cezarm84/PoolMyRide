@@ -1,7 +1,9 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 const FAQPage: React.FC = () => {
   return (
+  <div>
     <main className="container mx-auto p-6">
       <section className="mb-8">
         <h2 className="text-3xl font-bold text-center mb-4">Welcome to Car Pool App</h2>
@@ -61,26 +63,26 @@ const FAQPage: React.FC = () => {
       <section className="bg-white shadow-md rounded-lg p-6">
         <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
         <div className="mb-4">
-          <h3 className="text-xl font-semibold mb-2">What is carpooling?</h3>
+          <h3 className="text-xl font-semibold mx-auto mb-2">What is carpooling?</h3>
           <p>
             Carpooling is the sharing of car journeys so that more than one person travels in a car. It reduces each person's travel costs such as fuel expenses, tolls, and the stress of driving.
           </p>
           <img
             alt="Illustration of multiple people sharing a car ride"
-            className="rounded-lg shadow-md mt-2"
+            className="rounded-lg shadow-md mx-auto mb-2 mt-2"
             height="400"
             src="https://storage.googleapis.com/a1aa/image/JNf3XB5Ni90YWCajRqB9DGDqPyBLm0AS5CgSG5IaFvKTvMeTA.jpg"
             width="600"
           />
         </div>
         <div className="mb-4">
-          <h3 className="text-xl font-semibold mb-2">How do I join a carpool?</h3>
+          <h3 className="text-xl font-semibold mx-auto mb-2 ">How do I join a carpool?</h3>
           <p>
             You can join a carpool by signing up on our platform, searching for available carpool options in your area, and contacting the carpool organizer to arrange the details.
           </p>
           <img
             alt="Illustration of a person signing up on a carpool app"
-            className="rounded-lg shadow-md mt-2"
+            className="rounded-lg shadow-md mx-auto mb-2 mt-2"
             height="400"
             src="https://storage.googleapis.com/a1aa/image/vM9Stwt7g2psCNcHm8mcffbV2teoKr9Bj775hiRcbdf95lxPB.jpg"
             width="600"
@@ -93,9 +95,9 @@ const FAQPage: React.FC = () => {
           </p>
           <img
             alt="Illustration of safety measures in carpooling"
-            className="rounded-lg shadow-md mt-2"
+            className="rounded-lg shadow-md mx-auto mb-2 mt-2"
             height="400"
-            src="https://storage.googleapis.com/a1aa/image/4qCCGMiUPtqjHdnECtN1JMaMbMIBLl7wg6tnlUb2CFrqXGfJA.jpg"
+            src="/assets/safe.png"
             width="600"
           />
         </div>
@@ -106,9 +108,9 @@ const FAQPage: React.FC = () => {
           </p>
           <img
             alt="Illustration of the benefits of carpooling"
-            className="rounded-lg shadow-md mt-2"
+            className="rounded-lg shadow-md mx-auto mb-2  mt-2"
             height="400"
-            src="https://storage.googleapis.com/a1aa/image/bPJGvAPkRW4rPFV8sjknSGHH0NHbhKU2bO3zb81171ksXGfJA.jpg"
+            src="/assets/miljö.png"
             width="600"
           />
         </div>
@@ -119,7 +121,7 @@ const FAQPage: React.FC = () => {
           </p>
           <img
             alt="Illustration of organizing a carpool"
-            className="rounded-lg shadow-md mt-2"
+            className="rounded-lg shadow-md mx-auto mb-2 mt-2"
             height="400"
             src="https://storage.googleapis.com/a1aa/image/IVg3S98vhk7tOt382yuzfHL21psizykcr26e35GpKYprey4nA.jpg"
             width="600"
@@ -132,9 +134,9 @@ const FAQPage: React.FC = () => {
           </p>
           <img
             alt="Illustration of updating carpool plans"
-            className="rounded-lg shadow-md mt-2"
+            className="rounded-lg shadow-md mx-auto mb-2 mt-2"
             height="400"
-            src="https://storage.googleapis.com/a1aa/image/ioh7GsPuNjqrJRs0kTuJsfgySzoemb1p1hT1FheM4Mc68y4nA.jpg"
+            src="/assets/omboka.png"
             width="600"
           />
         </div>
@@ -145,25 +147,13 @@ const FAQPage: React.FC = () => {
           </p>
           <img
             alt="Illustration of cost-sharing in carpooling"
-            className="rounded-lg shadow-md mt-2"
+            className="rounded-lg shadow-md mx-auto mb-2 mt-2"
             height="400"
-            src="https://storage.googleapis.com/a1aa/image/XQA6Ke7EE613MSMmP5dfJ7nGecanwbuMIvbf9GsXEVnT6lxPB.jpg"
+            src="/assets/cost.png"
             width="600"
           />
         </div>
-        <div className="mb-4">
-          <h3 className="text-xl font-semibold mb-2">Can I carpool with strangers?</h3>
-          <p>
-            Yes, you can carpool with strangers. Our platform connects you with other users looking for carpool options. We recommend communicating clearly and meeting in a public place for the first time to ensure safety.
-          </p>
-          <img
-            alt="Illustration of carpooling with strangers"
-            className="rounded-lg shadow-md mt-2"
-            height="400"
-            src="https://storage.googleapis.com/a1aa/image/9xko7edsTMwEDy37ij4GNXj5aNRuBxOttwQecm8yhHYtey4nA.jpg"
-            width="600"
-          />
-        </div>
+        
         <div className="mb-4">
           <h3 className="text-xl font-semibold mb-2">How do I rate my carpool experience?</h3>
           <p>
@@ -171,9 +161,9 @@ const FAQPage: React.FC = () => {
           </p>
           <img
             alt="Illustration of rating a carpool experience"
-            className="rounded-lg shadow-md mt-2"
+            className="rounded-lg shadow-md mx-auto mb-2 mt-2"
             height="400"
-            src="https://storage.googleapis.com/a1aa/image/0nfxEZe5XppBTk1u3CAGkjeSBI1m5DGJakLCINKnovwD9y4nA.jpg"
+            src="/assets/rating.png"
             width="600"
           />
         </div>
@@ -184,7 +174,7 @@ const FAQPage: React.FC = () => {
           </p>
           <img
             alt="Illustration of contacting support for complaints"
-            className="rounded-lg shadow-md mt-2"
+            className="rounded-lg shadow-md mx-auto mb-2"
             height="400"
             src="https://storage.googleapis.com/a1aa/image/LG2uVDpaM8byFdenrlNY6hHleRokui3u5IK2LLyWZWR0ey4nA.jpg"
             width="600"
@@ -192,6 +182,9 @@ const FAQPage: React.FC = () => {
         </div>
       </section>
     </main>
+    {/* Footer Component */}
+    <Footer className="mt-auto" />
+  </div>
   );
 };
 

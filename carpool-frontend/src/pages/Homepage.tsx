@@ -20,7 +20,7 @@ const newsItems = [
     description: "Join us for our upcoming community event to meet fellow carpoolers.",
   },
   {
-    image: "https://storage.googleapis.com/a1aa/image/rBlcdsjI34qiHtluYeCKd55ceHPUI5feZSbw0breNiI66weeJA.jpg",
+    image: "/public/assets/stories.jpg",
     alt: "Success story",
     title: "Success Story",
     description: "Read how carpooling has positively impacted our users.",
@@ -50,7 +50,7 @@ const Homepage = () => {
         {/* Login Section */}
         {!username && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Login</h2>
+            <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">Login</h2>
             <LoginForm onLogin={handleLogin} />
           </section>
         )}
@@ -64,7 +64,7 @@ const Homepage = () => {
             Share your ride, save the planet, and make new friends along the way.
           </p>
           <img
-            src="https://storage.googleapis.com/a1aa/image/WSnPGlrjHEYeQKboABgHS2jUMn4FDqI7JXWp7Br17zasD79JA.jpg"
+            src="\public\assets\ride-sharing.jpg"
             alt="Carpool group"
             className="mx-auto rounded-lg shadow-lg"
             width="800"
